@@ -1,0 +1,13 @@
+{
+  "name": "lab1-ssg",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build-ssg.js",
+    "preview": "node ../scripts/serve-static.mjs dist 4173"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

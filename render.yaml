@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: se3306-lab1-ssr
+    runtime: node
+    rootDir: lab1-ssr
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.16.0
+      - key: NODE_ENV
+        value: production

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="使用静态站点生成的 Web 渲染技术文章列表" />
+    <title>SSG 文章列表 | Rendering Notes</title>
+    <link rel="icon" href="/ssg/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/ssg/style.css" />
+  </head>
+  <body data-render-mode="SSG" data-render-time="2026-09-23T17:29:23.260Z">
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand"><span class="brand-mark">R/3</span><span>Rendering Notes</span></div>
+        <span class="render-badge">SSG · 静态站点生成</span>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Web Rendering Field Guide</p>
+            <h1>在访问发生之前完成页面</h1>
+            <p class="hero-copy">十篇短文梳理现代 Web 渲染的关键选择。本页 HTML 在构建阶段一次性生成，访问时由静态服务器直接分发。</p>
+            <div class="hero-meta">
+              <span>10 篇文章</span><span>实验版本：SSG</span><span>静态构建时间：<time>2026-09-23T17:29:23.260Z</time></span>
+            </div>
+          </div>
+          <figure class="hero-figure">
+            <img src="/ssg/images/rendering-workflow.webp" alt="CSR、SSR 与 SSG 渲染流程图" width="1200" height="900" />
+            <figcaption>同一份内容，三种生成时机</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="content-inner" aria-labelledby="article-heading">
+        <div class="section-heading">
+          <h2 id="article-heading">文章列表</h2>
+          <p>静态站点生成 · 共 10 篇</p>
+        </div>
+        <div class="article-grid">
+    <article class="article-card">
+      <div class="article-index">01</div>
+      <div>
+        <div class="article-meta">
+          <span>客户端渲染</span>
+          <time datetime="2026-09-01">2026-09-01</time>
+        </div>
+        <h3>从空白 HTML 到完整界面：理解 CSR</h3>
+        <p>CSR 将页面结构交给浏览器中的 JavaScript 生成。首个 HTML 很轻，但用户需要等待脚本下载、执行和数据准备。</p>
+      </div>
+    </article>
+  
+    <article class="article-card">
+      <div class="article-index">02</div>
+      <div>
+        <div class="article-meta">
+          <span>服务端渲染</span>
+          <time datetime="2026-09-03">2026-09-03</time>
+        </div>
+        <h3>SSR 为什么能改善首屏与 SEO</h3>
+        <p>SSR 在收到请求后由服务器拼装完整 HTML。浏览器更早看到正文，搜索引擎也能直接读取主要内容。</p>
+      </div>
+    </article>
+  
+    <article class="article-card">
+      <div class="article-index">03</div>
+      <div>
+        <div class="article-meta">
+          <span>静态生成</span>
+          <time datetime="2026-09-05">2026-09-05</time>
+        </div>
+        <h3>SSG：把渲染成本提前到构建阶段</h3>
+        <p>SSG 在发布前生成静态页面。访问时只需分发文件，特别适合更新频率较低的文档、博客和产品介绍。</p>
+      </div>
+    </article>
+  
+    <article class="article-card">
+      <div class="article-index">04</div>
+      <div>
+        <div class="article-meta">
+          <span>性能指标</span>
+          <time datetime="2026-09-07">2026-09-07</time>
+        </div>
+        <h3>首屏性能指标 FCP 与 LCP 怎么看</h3>
+        <p>FCP 关注首次内容绘制，LCP 关注最大内容元素出现的时间。二者共同描述用户感知到的加载速度。</p>
+      </div>
+    </article>
+  
+    <article class="article-card">
+      <div class="article-index">05</div>
+      <div>
+        <div class="article-meta">
+          <span>调试方法</span>
+          <time datetime="2026-09-09">2026-09-09</time>
+        </div>
+        <h3>查看源代码为何能辨别渲染方式</h3>
+        <p>查看源代码展示服务器最初返回的 HTML。若正文只在执行脚本后出现，页面通常采用了客户端渲染。</p>
+      </div>
+    </article>
+  
+    <article class="article-card">
+      <div class="article-index">06</div>
+      <div>
+        <div class="article-meta">
+          <span>同构应用</span>
+          <time datetime="2026-09-11">2026-09-11</time>
+        </div>
+        <h3>Hydration 如何让 SSR 页面动起来</h3>
+        <p>服务端 HTML 负责快速展示，客户端脚本再绑定事件和状态。这个接管过程被称为 Hydration。</p>
+      </div>
+    </article>
+  
+    <article class="article-card">
+      <div class="article-index">07</div>
+      <div>
+        <div class="article-meta">
+          <span>网络优化</span>
+          <time datetime="2026-09-13">2026-09-13</time>
+        </div>
+        <h3>静态资源缓存与 CDN 的协作</h3>
+        <p>带内容哈希的脚本和样式可以长期缓存，CDN 则把文件送到离用户更近的节点，降低传输延迟。</p>
+      </div>
+    </article>
+  
+    <article class="article-card">
+      <div class="article-index">08</div>
+      <div>
+        <div class="article-meta">
+          <span>架构选择</span>
+          <time datetime="2026-09-15">2026-09-15</time>
+        </div>
+        <h3>实时页面该选哪一种渲染方案</h3>
+        <p>股票、聊天等实时界面通常以客户端更新为主，同时可用 SSR 提供首屏骨架，在速度与交互之间取得平衡。</p>
+      </div>
+    </article>
+  
+    <article class="article-card">
+      <div class="article-index">09</div>
+      <div>
+        <div class="article-meta">
+          <span>技术演进</span>
+          <time datetime="2026-09-17">2026-09-17</time>
+        </div>
+        <h3>从 SPA 到混合渲染的演进</h3>
+        <p>现代框架不再要求整个站点只选一种模式，而是允许按页面甚至按组件组合 CSR、SSR、SSG 与流式渲染。</p>
+      </div>
+    </article>
+  
+    <article class="article-card">
+      <div class="article-index">10</div>
+      <div>
+        <div class="article-meta">
+          <span>实验方法</span>
+          <time datetime="2026-09-19">2026-09-19</time>
+        </div>
+        <h3>用真实数据验证技术判断</h3>
+        <p>架构选择应建立在可复现的测量上。统一内容、设备和网络条件，才能让对比结果具有解释力。</p>
+      </div>
+    </article>
+  </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner"><p>SE3306 · Web 渲染方式对比实验</p><p>CSR / SSR / SSG</p></div>
+    </footer>
+  </body>
+</html>

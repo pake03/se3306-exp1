@@ -1,0 +1,14 @@
+{
+  "name": "lab1-csr",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --configLoader native --host 127.0.0.1 --port 5173",
+    "build": "vite build --configLoader native",
+    "preview": "vite preview --configLoader native --host 127.0.0.1 --port 5173 --strictPort"
+  },
+  "devDependencies": {
+    "vite": "^7.1.7"
+  }
+}

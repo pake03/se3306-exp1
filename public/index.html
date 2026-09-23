@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SE3306 CSR、SSR、SSG 渲染方式对比实验" />
+    <title>Web 渲染方式对比实验</title>
+    <style>
+      *{box-sizing:border-box}body{margin:0;color:#17201c;background:#f4f6f3;font-family:Inter,"Segoe UI","Microsoft YaHei",sans-serif}
+      header{border-bottom:1px solid #d9dfdb;background:#fff}.bar,main,footer div{width:min(1040px,calc(100% - 36px));margin:auto}.bar{display:flex;min-height:64px;align-items:center;justify-content:space-between}.brand{font-weight:800}.tag{color:#156b52;font-size:13px;font-weight:750}
+      main{padding:72px 0 90px}.eyebrow{margin:0 0 14px;color:#156b52;font-size:13px;font-weight:800}h1{max-width:760px;margin:0;font:700 52px/1.15 Georgia,"Songti SC",serif}.lead{max-width:700px;margin:22px 0 42px;color:#5b6861;font-size:17px;line-height:1.8}
+      .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{display:flex;min-height:250px;flex-direction:column;padding:26px;border:1px solid #d9dfdb;border-radius:8px;color:inherit;background:#fff;text-decoration:none;transition:.16s}.card:hover{transform:translateY(-3px);border-color:#90aa9e;box-shadow:0 12px 28px rgba(31,55,45,.09)}.code{color:#156b52;font:700 28px Georgia,serif}.card h2{margin:28px 0 12px;font-size:22px}.card p{margin:0;color:#66736c;line-height:1.7}.open{margin-top:auto;padding-top:22px;color:#156b52;font-weight:750}
+      footer{border-top:1px solid #d9dfdb;background:#fff}footer div{display:flex;min-height:86px;align-items:center;justify-content:space-between;color:#6a756f;font-size:13px}
+      @media(max-width:760px){main{padding:46px 0 64px}h1{font-size:38px}.grid{grid-template-columns:1fr}.card{min-height:210px}footer div{display:block;padding:24px 0}footer p{margin:6px 0}}
+    </style>
+  </head>
+  <body>
+    <header><div class="bar"><span class="brand">Rendering Notes</span><span class="tag">SE3306 · 实验一</span></div></header>
+    <main>
+      <p class="eyebrow">WEB RENDERING LAB</p>
+      <h1>同一份内容，三种 HTML 生成时机</h1>
+      <p class="lead">分别打开三个版本，观察浏览器生成、请求时生成与构建时生成的区别。三个页面使用相同内容和视觉样式，便于直接比较。</p>
+      <section class="grid" aria-label="渲染模式入口">
+        <a class="card" href="/csr/"><span class="code">01 · CSR</span><h2>客户端渲染</h2><p>初始 HTML 只有应用容器，文章由浏览器执行 JavaScript 后生成。</p><span class="open">打开 CSR →</span></a>
+        <a class="card" href="/ssr"><span class="code">02 · SSR</span><h2>服务端渲染</h2><p>每次请求都由服务端生成完整 HTML，并显示最新的渲染时间。</p><span class="open">打开 SSR →</span></a>
+        <a class="card" href="/ssg/"><span class="code">03 · SSG</span><h2>静态站点生成</h2><p>发布前生成完整 HTML，访问时直接分发已经构建好的静态文件。</p><span class="open">打开 SSG →</span></a>
+      </section>
+    </main>
+    <footer><div><p>CSR / SSR / SSG 渲染方式对比</p><p>仓库：se3306-exp1</p></div></footer>
+  </body>
+</html>

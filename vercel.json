@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build:deploy",
+  "rewrites": [
+    { "source": "/ssr", "destination": "/api/ssr" }
+  ]
+}

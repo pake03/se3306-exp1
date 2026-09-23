@@ -1,0 +1,28 @@
+{
+  "name": "se3306-exp1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CSR、SSR、SSG 三种 Web 渲染方式对比实验",
+  "workspaces": [
+    "lab1-csr",
+    "lab1-ssr",
+    "lab1-ssg"
+  ],
+  "scripts": {
+    "assets": "node scripts/generate-artwork.mjs",
+    "build": "npm run assets && npm run build --workspace lab1-csr && npm run build --workspace lab1-ssg",
+    "build:deploy": "npm run build && node scripts/build-deploy.mjs",
+    "preview:csr": "npm run preview --workspace lab1-csr",
+    "start:ssr": "npm run start --workspace lab1-ssr",
+    "preview:ssg": "npm run preview --workspace lab1-ssg",
+    "verify": "node scripts/verify.mjs",
+    "test": "npm run build && npm run verify"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.55.0",
+    "sharp": "^0.34.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

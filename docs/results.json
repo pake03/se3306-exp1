@@ -1,0 +1,249 @@
+{
+  "generatedAt": "2026-09-23T17:08:24.915Z",
+  "checks": [
+    {
+      "name": "CSR 初始 HTML",
+      "expected": "不含文章正文",
+      "actual": "未检测到文章正文",
+      "status": "通过",
+      "evidence": "source-csr.png"
+    },
+    {
+      "name": "SSR 初始 HTML",
+      "expected": "直接包含 10 篇文章",
+      "actual": "包含 10 篇",
+      "status": "通过",
+      "evidence": "source-ssr.png"
+    },
+    {
+      "name": "SSG 初始 HTML",
+      "expected": "直接包含 10 篇文章",
+      "actual": "包含 10 篇",
+      "status": "通过",
+      "evidence": "source-ssg.png"
+    },
+    {
+      "name": "SSR 动态渲染时间",
+      "expected": "连续请求时间不同",
+      "actual": "2026-09-23T17:08:14.634Z → 2026-09-23T17:08:14.763Z",
+      "status": "通过",
+      "evidence": "ssr-time-change.png"
+    },
+    {
+      "name": "SSG 固定构建时间",
+      "expected": "连续请求时间相同",
+      "actual": "2026-09-23T17:07:16.095Z = 2026-09-23T17:07:16.095Z",
+      "status": "通过",
+      "evidence": "ssg-time-fixed.png"
+    },
+    {
+      "name": "SSR 健康检查",
+      "expected": "status=ok 且 articles=10",
+      "actual": "{\"status\":\"ok\",\"mode\":\"SSR\",\"articles\":10}",
+      "status": "通过",
+      "evidence": ""
+    },
+    {
+      "name": "CSR 桌面端页面",
+      "expected": "10 篇文章、图片成功、无控制台错误、无横向溢出",
+      "actual": "10 篇；图片=true; 错误=0; 无溢出=true",
+      "status": "通过",
+      "evidence": "csr-desktop.png"
+    },
+    {
+      "name": "CSR 移动端页面",
+      "expected": "10 篇文章、图片成功、无控制台错误、无横向溢出",
+      "actual": "10 篇；图片=true; 错误=0; 无溢出=true",
+      "status": "通过",
+      "evidence": "csr-mobile.png"
+    },
+    {
+      "name": "SSR 桌面端页面",
+      "expected": "10 篇文章、图片成功、无控制台错误、无横向溢出",
+      "actual": "10 篇；图片=true; 错误=0; 无溢出=true",
+      "status": "通过",
+      "evidence": "ssr-desktop.png"
+    },
+    {
+      "name": "SSR 移动端页面",
+      "expected": "10 篇文章、图片成功、无控制台错误、无横向溢出",
+      "actual": "10 篇；图片=true; 错误=0; 无溢出=true",
+      "status": "通过",
+      "evidence": "ssr-mobile.png"
+    },
+    {
+      "name": "SSG 桌面端页面",
+      "expected": "10 篇文章、图片成功、无控制台错误、无横向溢出",
+      "actual": "10 篇；图片=true; 错误=0; 无溢出=true",
+      "status": "通过",
+      "evidence": "ssg-desktop.png"
+    },
+    {
+      "name": "SSG 移动端页面",
+      "expected": "10 篇文章、图片成功、无控制台错误、无横向溢出",
+      "actual": "10 篇；图片=true; 错误=0; 无溢出=true",
+      "status": "通过",
+      "evidence": "ssg-mobile.png"
+    },
+    {
+      "name": "CSR JavaScript 网络请求",
+      "expected": "请求 assets/main.js",
+      "actual": "已检测到 assets/main.js",
+      "status": "通过",
+      "evidence": "network-csr.png"
+    }
+  ],
+  "performanceRuns": {
+    "csr": [
+      {
+        "responseStart": 4,
+        "domContentLoaded": 16,
+        "fcp": 80,
+        "lcp": 92,
+        "seo": 100,
+        "performance": 93
+      },
+      {
+        "responseStart": 4,
+        "domContentLoaded": 18,
+        "fcp": 84,
+        "lcp": 96,
+        "seo": 100,
+        "performance": 93
+      },
+      {
+        "responseStart": 4,
+        "domContentLoaded": 16,
+        "fcp": 80,
+        "lcp": 92,
+        "seo": 100,
+        "performance": 93
+      }
+    ],
+    "ssr": [
+      {
+        "responseStart": 3,
+        "domContentLoaded": 10,
+        "fcp": 84,
+        "lcp": 84,
+        "seo": 100,
+        "performance": 93
+      },
+      {
+        "responseStart": 3,
+        "domContentLoaded": 10,
+        "fcp": 76,
+        "lcp": 88,
+        "seo": 100,
+        "performance": 93
+      },
+      {
+        "responseStart": 3,
+        "domContentLoaded": 11,
+        "fcp": 84,
+        "lcp": 84,
+        "seo": 100,
+        "performance": 93
+      }
+    ],
+    "ssg": [
+      {
+        "responseStart": 4,
+        "domContentLoaded": 11,
+        "fcp": 84,
+        "lcp": 84,
+        "seo": 100,
+        "performance": 93
+      },
+      {
+        "responseStart": 4,
+        "domContentLoaded": 10,
+        "fcp": 100,
+        "lcp": 100,
+        "seo": 100,
+        "performance": 92
+      },
+      {
+        "responseStart": 4,
+        "domContentLoaded": 10,
+        "fcp": 96,
+        "lcp": 96,
+        "seo": 100,
+        "performance": 92
+      }
+    ]
+  },
+  "performanceSummary": {
+    "csr": {
+      "htmlBytes": 546,
+      "fcp": 80,
+      "lcp": 92,
+      "performance": 93,
+      "seo": 100
+    },
+    "ssr": {
+      "htmlBytes": 6763,
+      "fcp": 84,
+      "lcp": 84,
+      "performance": 93,
+      "seo": 100
+    },
+    "ssg": {
+      "htmlBytes": 6766,
+      "fcp": 96,
+      "lcp": 96,
+      "performance": 92,
+      "seo": 100
+    }
+  },
+  "browserResults": {
+    "csr": {
+      "desktop": {
+        "articles": 10,
+        "title": "CSR 文章列表 | Rendering Notes",
+        "imageLoaded": true,
+        "noOverflow": true,
+        "consoleErrors": []
+      },
+      "mobile": {
+        "articles": 10,
+        "title": "CSR 文章列表 | Rendering Notes",
+        "imageLoaded": true,
+        "noOverflow": true,
+        "consoleErrors": []
+      }
+    },
+    "ssr": {
+      "desktop": {
+        "articles": 10,
+        "title": "SSR 文章列表 | Rendering Notes",
+        "imageLoaded": true,
+        "noOverflow": true,
+        "consoleErrors": []
+      },
+      "mobile": {
+        "articles": 10,
+        "title": "SSR 文章列表 | Rendering Notes",
+        "imageLoaded": true,
+        "noOverflow": true,
+        "consoleErrors": []
+      }
+    },
+    "ssg": {
+      "desktop": {
+        "articles": 10,
+        "title": "SSG 文章列表 | Rendering Notes",
+        "imageLoaded": true,
+        "noOverflow": true,
+        "consoleErrors": []
+      },
+      "mobile": {
+        "articles": 10,
+        "title": "SSG 文章列表 | Rendering Notes",
+        "imageLoaded": true,
+        "noOverflow": true,
+        "consoleErrors": []
+      }
+    }
+  }
+}
